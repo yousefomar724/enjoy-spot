@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "جاري التحميل...",
+    "login": "تسجيل الدخول",
+    "language": "اللغة",
+    "currency": "العملة",
+    "english": "الإنجليزية",
+    "arabic": "العربية",
+    "uae": "الإمارة العربية المتحدة",
+    "usa": "الولايات المتحدة"
+  },
+  "metadata": {
+    "title": "التصنيفات - {category}",
+    "description": "استكشف فئات {category} الخاصة وابحث عن {category} المثالي لك",
+    "page_name": "يُخوت"
+  },
+  "categories": {
+    "yachts": "يُخوت",
+    "watersports": "المركبات المائية",
+    "helicopters": "الطائرات الهليكوبتر",
+    "desert": "الصحراء",
+    "private": "الخاصة",
+    "sharing": "المشتركة",
+    "black_yacht": "اليخت الأسود",
+    "fishing": "الصيد",
+    "birthday": "اليوم الميلادي",
+    "corporate": "الشركات",
+    "wedding": "الزواج",
+    "event": "الحدث",
+    "packages": "الباقات",
+    "city": "المدينة",
+    "date_and_time": "التاريخ والوقت",
+    "guests": "الضيوف",
+    "search": "ابحث",
+    "explore_more": "استكشف المزيد",
+    "contact_us": "تواصل معنا",
+    "manage_bookings": "إدارة الحجوزات",
+    "privacy_policy": "سياسة الخصوصية",
+    "terms_and_conditions": "الشروط والأحكام",
+    "help_center": "مركز المساعدة",
+    "book_now": "حجز الآن",
+    "cabins": "الغرف",
+    "ft": "قدم",
+    "share": "مشاركة",
+    "events": "الفعاليات"
+  },
+  "yacht": {
+    "guests": "{count} ضيف",
+    "cabins": "{count} غرفة",
+    "length": "{length} قدم",
+    "price": "{price} درهم/ساعة",
+    "rating": "{rating}/5"
+  },
+  "filters": {
+    "select_city": "المدينة",
+    "select_date": "التاريخ والوقت",
+    "select_guests": "الضيوف"
+  },
+  "explore": {
+    "title": "استكشف المزيد",
+    "topic_1": "يخوت فاخرة",
+    "topic_2": "قوارب الحفلات",
+    "topic_3": "رحلات الصيد",
+    "topic_4": "الأنشطة المائية",
+    "topic_5": "رحلات السفاري",
+    "topic_6": "جولات المدينة"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "login": "Login",
+    "language": "Language",
+    "currency": "Currency",
+    "english": "English",
+    "arabic": "Arabic",
+    "uae": "United Arab Emirates",
+    "usa": "United States"
+  },
+  "metadata": {
+    "title": "Categories - {category}",
+    "description": "Browse our {category} categories and find your perfect {category}",
+    "page_name": "Yachts"
+  },
+  "categories": {
+    "yachts": "Yachts",
+    "watersports": "Watersports",
+    "helicopters": "Helicopters",
+    "desert": "Desert",
+    "private": "Private",
+    "sharing": "Sharing",
+    "black_yacht": "Black Yacht",
+    "fishing": "Fishing",
+    "birthday": "Birthday",
+    "corporate": "Corporate",
+    "wedding": "Wedding",
+    "event": "Event",
+    "packages": "Packages",
+    "city": "City",
+    "date_and_time": "Date & Time",
+    "guests": "Guests",
+    "search": "Search",
+    "explore_more": "Explore More",
+    "contact_us": "Contact Us",
+    "manage_bookings": "Manage Bookings",
+    "privacy_policy": "Privacy Policy",
+    "terms_and_conditions": "Terms and Conditions",
+    "help_center": "Help Center",
+    "book_now": "Book Now",
+    "cabins": "Cabins",
+    "ft": "ft",
+    "share": "Share",
+    "events": "Events"
+  },
+  "yacht": {
+    "guests": "{count} Guests",
+    "cabins": "{count} Cabins",
+    "length": "{length} ft",
+    "price": "{price} AED/H",
+    "rating": "{rating}/5"
+  },
+  "filters": {
+    "select_city": "City",
+    "select_date": "Date & Time",
+    "select_guests": "Guests"
+  },
+  "explore": {
+    "title": "Explore More",
+    "topic_1": "Luxury Yachts",
+    "topic_2": "Party Boats",
+    "topic_3": "Fishing Trips",
+    "topic_4": "Water Activities",
+    "topic_5": "Desert Safari",
+    "topic_6": "City Tours"
+  }
+}
