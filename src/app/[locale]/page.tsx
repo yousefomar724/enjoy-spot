@@ -100,7 +100,7 @@ export default function HomePage({ params: { locale } }: Props) {
                 <TabsTrigger
                   key={category.id}
                   value={category.id.toString()}
-                  className="flex flex-col items-center gap-2 data-[state=active]:bg-[#00ADEE]/10"
+                  className="flex flex-col items-center gap-2 data-[state=active]:bg-secondary/10"
                 >
                   <div className="relative h-10 w-10">
                     {category.webIcon && (
@@ -197,7 +197,7 @@ export default function HomePage({ params: { locale } }: Props) {
 
           <Button
             variant="default"
-            className="h-12 w-full min-w-[120px] rounded-lg bg-[#25466A] px-8 text-base font-medium hover:bg-[#25466A]/90 rtl:text-lg"
+            className="h-12 w-full min-w-[120px] rounded-lg bg-primary px-8 text-base font-medium hover:bg-primary/90 rtl:text-lg"
           >
             {t("categories.search")}
           </Button>
@@ -312,6 +312,36 @@ export default function HomePage({ params: { locale } }: Props) {
               <Skeleton key={i} className="h-[400px]" />
             ))}
           </div>
+        ) : listings.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-12 text-center">
+            <div className="mb-4 text-gray-400">
+              <ListFilter className="mx-auto h-12 w-12" />
+            </div>
+            <h3 className="mb-2 text-lg font-medium text-gray-900">
+              {t("listings.no_results")}
+            </h3>
+            <p className="mb-6 text-sm text-gray-500">
+              {t("listings.try_adjusting_filters")}
+            </p>
+            <Button
+              variant="outline"
+              onClick={() => {
+                updateFilters({
+                  pageNumber: 1,
+                  pageSize: 12,
+                  cityId: undefined,
+                  locationId: undefined,
+                  listingCategoryId: undefined,
+                  search: undefined,
+                  sortBy: undefined,
+                  minPrice: undefined,
+                  maxPrice: undefined,
+                })
+              }}
+            >
+              {t("listings.clear_filters")}
+            </Button>
+          </div>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
             {listings.map((yacht) => (
@@ -380,7 +410,7 @@ export default function HomePage({ params: { locale } }: Props) {
               variant={filters.pageNumber === i + 1 ? "default" : "outline"}
               size="sm"
               className={
-                filters.pageNumber === i + 1 ? "bg-[#00ADEE]" : undefined
+                filters.pageNumber === i + 1 ? "bg-secondary" : undefined
               }
               onClick={() => updateFilters({ pageNumber: i + 1 })}
             >
@@ -398,7 +428,7 @@ export default function HomePage({ params: { locale } }: Props) {
             <Link
               key={i}
               href={`/explore/${i}`}
-              className="text-sm hover:text-[#00ADEE]"
+              className="text-sm hover:text-secondary"
             >
               {t(`explore.topic_${i}`)}
             </Link>

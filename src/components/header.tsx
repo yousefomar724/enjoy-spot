@@ -24,9 +24,7 @@ export default function Header({ locale }: { locale: Locale }) {
   const pathname = usePathname()
   const router = useRouter()
   const { types: listingTypes, loading } = useListingTypes()
-  const { isAuthenticated } = useAuth()
-
-  console.log(listingTypes)
+  const { isAuthenticated, signOut } = useAuth()
 
   const countries = [
     {
@@ -74,7 +72,7 @@ export default function Header({ locale }: { locale: Locale }) {
                 defaultValue={locale}
                 onValueChange={(value) => handleLanguageChange(value as Locale)}
               >
-                <SelectTrigger className="h-10 w-fit lg:w-14 gap-1 shadow-none border-none bg-transparent px-2 text-sm font-medium text-[#25466A] [&>span]:flex [&>span]:items-center [&>span]:gap-1">
+                <SelectTrigger className="h-10 w-fit lg:w-14 gap-1 shadow-none border-none bg-transparent px-2 text-sm font-medium text-primary [&>span]:flex [&>span]:items-center [&>span]:gap-1">
                   <SelectValue placeholder="En" className="font-inter" />
                 </SelectTrigger>
                 <SelectContent>
@@ -86,7 +84,7 @@ export default function Header({ locale }: { locale: Locale }) {
               <Separator orientation="vertical" className="h-4" />
 
               <Select defaultValue="uae">
-                <SelectTrigger className="h-10 w-fit lg:w-14 gap-1 border-none shadow-none bg-transparent px-2 text-sm font-medium text-[#25466A] [&>span]:flex [&>span]:items-center [&>span]:gap-1">
+                <SelectTrigger className="h-10 w-fit lg:w-14 gap-1 border-none shadow-none bg-transparent px-2 text-sm font-medium text-primary [&>span]:flex [&>span]:items-center [&>span]:gap-1">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -103,12 +101,20 @@ export default function Header({ locale }: { locale: Locale }) {
                 </SelectContent>
               </Select>
 
-              {!isAuthenticated() && (
+              {!isAuthenticated() ? (
                 <Button
                   variant="default"
-                  className="h-10 rounded-lg bg-[#25466A] text-xs lg:px-6 lg:text-sm font-medium text-white hover:bg-[#25466A]/90"
+                  className="h-10 rounded-lg bg-primary text-xs lg:px-6 lg:text-sm font-medium text-white hover:bg-primary/90"
                 >
                   {t("common.login")}
+                </Button>
+              ) : (
+                <Button
+                  variant="default"
+                  onClick={signOut}
+                  className="h-10 rounded-lg bg-primary text-xs lg:px-6 lg:text-sm font-medium text-white hover:bg-primary/90"
+                >
+                  {t("common.logout")}
                 </Button>
               )}
             </div>
@@ -127,7 +133,7 @@ export default function Header({ locale }: { locale: Locale }) {
                 <Link
                   key={type.id}
                   href={`/${type.name.toLowerCase()}`}
-                  className="whitespace-nowrap text-sm rtl:text-base text-[#25466A] flex flex-col items-center justify-center text-center"
+                  className="whitespace-nowrap text-sm rtl:text-base text-primary flex flex-col items-center justify-center text-center hover:text-secondary [&>div]:hover:stroke-secondary"
                 >
                   {type.webIcon && (
                     <div

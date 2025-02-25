@@ -54,7 +54,7 @@ export default function YachtCard({
           />
         </div>
         <div className="absolute end-3 bottom-3 ps-2 pt-2 rounded-tr-none rounded-tl-xl rtl:rounded-tr-xl rtl:rounded-tl-none bg-white">
-          <div className="flex flex-col items-center justify-center rounded-lg bg-[#00ADEE] px-3 py-1.5 text-white">
+          <div className="flex flex-col items-center justify-center rounded-lg bg-secondary px-3 py-1.5 text-white">
             <span className="text-2xl font-bold">{price}</span>
             <span className="text-sm">{priceText}</span>
           </div>
@@ -64,15 +64,13 @@ export default function YachtCard({
       <div className="space-y-4 p-4">
         <div className="flex items-center justify-between">
           <h3
-            className="text-2xl font-bold text-[#25466A] line-clamp-1"
+            className="text-2xl font-bold text-primary line-clamp-1"
             title={name}
           >
             {name}
           </h3>
           <div className="flex items-center gap-1">
-            <span className="text-sm font-medium text-[#25466A]">
-              {rating}/5
-            </span>
+            <span className="text-sm font-medium text-primary">{rating}/5</span>
             <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
           </div>
         </div>

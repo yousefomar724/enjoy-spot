@@ -2,12 +2,18 @@
   "common": {
     "loading": "Loading...",
     "login": "Login",
+    "logout": "Logout",
     "language": "Language",
     "currency": "Currency",
     "english": "English",
     "arabic": "Arabic",
     "uae": "United Arab Emirates",
     "usa": "United States"
+  },
+  "listings": {
+    "no_results": "No listings found",
+    "try_adjusting_filters": "Try adjusting your filters or clearing them to see more results",
+    "clear_filters": "Clear filters"
   },
   "auth": {
     "sign_in": "Sign In",

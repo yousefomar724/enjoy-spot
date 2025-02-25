@@ -41,8 +41,8 @@ export default function SignInPage({ params: { locale } }: Props) {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: "yousefomar724@gmail.com",
+      password: "yousefomar",
     },
   })
 
@@ -70,7 +70,7 @@ export default function SignInPage({ params: { locale } }: Props) {
                 priority
               />
             </div>
-            <h1 className="text-2xl font-bold text-[#25466A]">
+            <h1 className="text-2xl font-bold text-primary">
               {t("auth.sign_in")}
             </h1>
             <p className="text-center text-sm text-gray-500">
@@ -124,7 +124,7 @@ export default function SignInPage({ params: { locale } }: Props) {
 
               <Button
                 type="submit"
-                className="h-12 w-full bg-[#00ADEE] text-base font-medium hover:bg-[#00ADEE]/90"
+                className="h-12 w-full bg-secondary text-base font-medium hover:bg-secondary/90"
                 disabled={loading}
               >
                 {loading ? t("common.loading") : t("auth.sign_in")}
