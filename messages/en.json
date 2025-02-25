@@ -9,6 +9,14 @@
     "uae": "United Arab Emirates",
     "usa": "United States"
   },
+  "auth": {
+    "sign_in": "Sign In",
+    "sign_in_description": "Welcome back! Please enter your details.",
+    "email": "Email",
+    "email_placeholder": "Enter your email",
+    "password": "Password",
+    "password_placeholder": "Enter your password"
+  },
   "metadata": {
     "title": "Categories - {category}",
     "description": "Browse our {category} categories and find your perfect {category}",
@@ -48,7 +56,8 @@
     "guests": "{count} Guests",
     "cabins": "{count} Cabins",
     "length": "{length} ft",
-    "price": "{price} AED/H",
+    "currency_per_hour": "AED/H",
+    "currency_per_person": "AED/P",
     "rating": "{rating}/5"
   },
   "filters": {

@@ -9,6 +9,14 @@
     "uae": "الإمارة العربية المتحدة",
     "usa": "الولايات المتحدة"
   },
+  "auth": {
+    "sign_in": "تسجيل الدخول",
+    "sign_in_description": "مرحباً بعودتك! الرجاء إدخال بياناتك.",
+    "email": "البريد الإلكتروني",
+    "email_placeholder": "أدخل بريدك الإلكتروني",
+    "password": "كلمة المرور",
+    "password_placeholder": "أدخل كلمة المرور"
+  },
   "metadata": {
     "title": "التصنيفات - {category}",
     "description": "استكشف فئات {category} الخاصة وابحث عن {category} المثالي لك",
@@ -48,7 +56,8 @@
     "guests": "{count} ضيف",
     "cabins": "{count} غرفة",
     "length": "{length} قدم",
-    "price": "{price} درهم/ساعة",
+    "currency_per_hour": "د.أ/ساعة",
+    "currency_per_person": "د.أ/شخص",
     "rating": "{rating}/5"
   },
   "filters": {

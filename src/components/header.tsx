@@ -15,11 +15,18 @@ import { Separator } from "./ui/separator"
 import { Locale } from "@/types"
 import { usePathname, useRouter } from "next/navigation"
 import { startTransition } from "react"
+import { useListingTypes } from "@/hooks/useListingTypes"
+import { Skeleton } from "./ui/skeleton"
+import { useAuth } from "@/hooks/useAuth"
 
 export default function Header({ locale }: { locale: Locale }) {
   const t = useTranslations()
   const pathname = usePathname()
   const router = useRouter()
+  const { types: listingTypes, loading } = useListingTypes()
+  const { isAuthenticated } = useAuth()
+
+  console.log(listingTypes)
 
   const countries = [
     {
@@ -35,29 +42,6 @@ export default function Header({ locale }: { locale: Locale }) {
       translation: "common.usa",
       icon: "/usa.png",
       isDefault: false,
-    },
-  ]
-
-  const navigation = [
-    {
-      name: "categories.yachts",
-      href: "/yachts",
-      icon: "/icons/yachts.png",
-    },
-    {
-      name: "categories.watersports",
-      href: "/watersports",
-      icon: "/icons/watersports.png",
-    },
-    {
-      name: "categories.helicopters",
-      href: "/helicopter",
-      icon: "/icons/helicopter.png",
-    },
-    {
-      name: "categories.desert",
-      href: "/desert",
-      icon: "/icons/desert.png",
     },
   ]
 
@@ -119,27 +103,43 @@ export default function Header({ locale }: { locale: Locale }) {
                 </SelectContent>
               </Select>
 
-              <Button
-                variant="default"
-                className="h-10 rounded-lg bg-[#25466A] text-xs lg:px-6 lg:text-sm font-medium text-white hover:bg-[#25466A]/90"
-              >
-                {t("common.login")}
-              </Button>
+              {!isAuthenticated() && (
+                <Button
+                  variant="default"
+                  className="h-10 rounded-lg bg-[#25466A] text-xs lg:px-6 lg:text-sm font-medium text-white hover:bg-[#25466A]/90"
+                >
+                  {t("common.login")}
+                </Button>
+              )}
             </div>
           </div>
 
           {/* Bottom Section - Navigation */}
           <nav className="flex items-center justify-center gap-8 overflow-x-auto pb-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="whitespace-nowrap text-sm rtl:text-base text-[#25466A] flex flex-col items-center justify-center text-center"
-              >
-                <Image src={item.icon} alt={item.name} width={40} height={40} />
-                {t(item.name)}
-              </Link>
-            ))}
+            {loading ? (
+              <div className="flex gap-8">
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <Skeleton key={i} className="h-16 w-24" />
+                ))}
+              </div>
+            ) : (
+              listingTypes?.map((type) => (
+                <Link
+                  key={type.id}
+                  href={`/${type.name.toLowerCase()}`}
+                  className="whitespace-nowrap text-sm rtl:text-base text-[#25466A] flex flex-col items-center justify-center text-center"
+                >
+                  {type.webIcon && (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: type.webIcon,
+                      }}
+                    />
+                  )}
+                  {type.name}
+                </Link>
+              ))
+            )}
           </nav>
         </div>
       </div>

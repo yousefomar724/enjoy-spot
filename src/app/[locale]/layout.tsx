@@ -4,12 +4,12 @@ import { notFound } from "next/navigation"
 import { routing } from "@/i18n/routing"
 import { Locale } from "@/types"
 import { ReactNode, Suspense } from "react"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
 import Loading from "@/components/loading"
 import { Inter } from "next/font/google"
 import localFont from "next/font/local"
 import { cn } from "@/lib/utils"
+import { CircleCheckBig, CircleX } from "lucide-react"
+import { Toaster } from "@/components/ui/sonner"
 
 const zarid = localFont({
   src: "../../../public/zarid.woff",
@@ -67,9 +67,20 @@ export default async function RootLayout({
             )}
           >
             <Suspense fallback={<Loading />}>
-              <Header locale={locale} />
               {children}
-              <Footer />
+              <Toaster
+                position="top-center"
+                theme="light"
+                className="!left-1/2 !-translate-x-1/2 [&>li]:!mx-auto"
+                icons={{
+                  success: (
+                    <CircleCheckBig className="w-5 h-5 text-green-500 translate-y-0.5" />
+                  ),
+                  error: (
+                    <CircleX className="w-5 h-5 text-red-500 translate-y-0.5" />
+                  ),
+                }}
+              />
             </Suspense>
           </main>
         </NextIntlClientProvider>
